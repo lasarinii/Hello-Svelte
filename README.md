@@ -14,4 +14,4 @@ npm install
 npm run dev
 ```
 
-Em seguida abra o navegador em (http://localhost:5173/)[http://localhost:5173/] para visualizar a página.
+Em seguida abra o navegador em (http://localhost:5173/) [http://localhost:5173/] para visualizar a página.
