@@ -1,5 +1,5 @@
 # Hello-Svelte
-Demonstração de funcionalidades úteis do SvelteKit.
+Demonstração de algumas funcionalidades úteis do SvelteKit.
 
 ## Requisitos:
 Ter (NodeJS)[https://nodejs.org/en/] instalado.
