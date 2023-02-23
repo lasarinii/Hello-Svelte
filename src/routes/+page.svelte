@@ -1,4 +1,9 @@
 <script lang="ts">
+     import List from './components/List.svelte'
+     import ListButton from './components/ListButton.svelte';
+     import Grid from './components/Grid.svelte'
+     import GridButton from './components/GridButton.svelte';
+
      let nome = ""
 
      let grid = true
@@ -14,6 +19,7 @@
      }
      
      let listgrid = false
+
      function toggle() {
           listgrid = !listgrid
      }
@@ -41,60 +47,25 @@
 <h1>Bem vindo, {nome}<b>_</b>!</h1>
 <input type="text" bind:value={nome} placeholder="Your name here">
      
-<button on:click={toggle} style="color: orangered; border: solid orangered 1px;border-radius: 5px;font-size: 1.3rem;padding: 5px;position: absolute;bottom: 100px;background-color: white;">Click?</button>
+<button on:click={toggle}>Click?</button>
 
 {#if listgrid}
-     <section>
-          <button id="grid" on:click={displayGrid}>
-               <svg width="13" height="13" style="background-color: orangered;border-radius: 2px;margin: 5px 0 -1px 5px;"/>
-               <svg width="13" height="13" style="background-color: orangered;border-radius: 2px;margin: 5px 5px -1px 0;"/><br>
-               <svg width="13" height="13" style="background-color: orangered;border-radius: 2px;margin: 0 0 2px 0;"/>
-               <svg width="13" height="13" style="background-color: orangered;border-radius: 2px;margin: 0 0 2px 0;"/>
-          </button>
+     <section style:padding="10px;">
+          <GridButton displayGrid={displayGrid}/> 
 
-          <button id="list" on:click={displayList}>
-               <svg width="27" height="6" style="background-color: orangered;border-radius: 2px;display: block; margin:5px;"/>
-               <svg width="27" height="6" style="background-color: orangered;border-radius: 2px;display: block; margin:5px;"/>
-               <svg width="27" height="6" style="background-color: orangered;border-radius: 2px;display: block; margin:5px;"/>
-          </button>
+          <ListButton displayList={displayList}/>
      
           <div id="show">
-               {#if grid}
-                    {#each show as item}
-                         <div style="width: 150px; display: inline-block;text-align: center;border: 1px solid lightgray; border-radius: 5px;margin: 5px;">
-                              <h1>Item: {item.name}</h1>
-                              <p>{nome} {item.content}</p>
-                         </div>
-                    {/each}
-               {:else if list}
-                    {#each show as item}
-                         <div style="border: 1px solid lightgray;margin: 5px;border-radius: 5px;">
-                              <h1>Item: {item.name}</h1>
-                              <p>{nome} {item.content}</p>
-                         </div>
-                    {/each}
-               {:else}
-                    <p>none</p>
+               {#if list}
+                    <List nome={nome} items={show}/>
+               {:else if grid}
+                    <Grid nome={nome} items={show}/>
                {/if}
           </div>
      </section>
 {/if}
 
-<style>
-     :global(*) {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-          font-family: Arial, Helvetica, sans-serif;
-     }
-     :global(body) {
-          width: 100vw;
-          height: 100vh;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-direction: column;
-     }
+<style> 
      h1 {
           font-size: 3rem;
           padding: 20px;
@@ -107,26 +78,20 @@
           0% {color: orangered}
           50% {color: transparent;}
      }
-     section {
-          padding: 10px;
-     }
-     #grid {
-          border: none;
+     button {
+          color: orangered;
+          border: solid orangered 1px;
           border-radius: 5px;
-          background-color: lightgray;
-     }
-     #list {
-          transform: translateY(3px);
-          border: none;
-          border-radius:5px;
-          background-color: lightgray;
+          font-size: 1.3rem;
+          padding: 5px;
+          position: absolute;
+          bottom: 100px;
+          background-color: white;
      }
      #show {
           width: 500px;
           height: 500px;
           overflow-y: auto;
      }
-     #show h1{
-          font-size: 120%;
-     }
+
 </style>
