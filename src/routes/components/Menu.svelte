@@ -8,13 +8,13 @@
 
 <ul>
      {#if menu}
-          <li style="background-color: black;position: absolute;width: 100px;height: 100px;display: flex;justify-content: center;align-items: center;border-radius: 0 0 150% 0;">
+          <li style="background-color: black;position: fixed;width: 100px;height: 100px;display: flex;justify-content: center;align-items: center;border-radius: 0 0 150% 0;">
                <button style="border: none;background-color: transparent; padding: 10px;position: absolute;top: 20px;left: 20px;" on:click={toggle}>
                     <svg width="35" height="5" style="background-color: white;border-radius: 5px;"/>
                </button>
           </li>
      {:else}
-          <li style="background-color: black;position: absolute;width: 300px;height: 100vh;">
+          <li style="background-color: black;position: fixed;width: 300px;height: 100vh;">
                <button style="border: none;background-color: transparent;padding: 10px;position: absolute;top: 20px; left: 20px;" on:click={toggle}>
                     <svg width="35" height="5" style="background-color: white;border-radius: 5px;"/>
                </button>
