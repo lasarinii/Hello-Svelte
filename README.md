@@ -2,7 +2,7 @@
 Demonstração de algumas funcionalidades úteis do SvelteKit.
 
 ## Requisitos:
-Ter (NodeJS)[https://nodejs.org/en/] instalado.
+Ter [NodeJS](https://nodejs.org/en/) instalado.
 
 ## Para baixar o código digite em seu terminal:
 
