@@ -1,6 +1,10 @@
 # Hello-Svelte
 Demonstração de algumas funcionalidades úteis do SvelteKit.
 
+Disponível em -> https://hello-svelte-delta.vercel.app/
+
+*obs: Ainda não foram feitas otimizações para dispositivos móveis, a visualização e funcionalidades são reduzidas.*
+
 ## Requisitos:
 Ter [NodeJS](https://nodejs.org/en/) instalado.
 
