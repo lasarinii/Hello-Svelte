@@ -47,8 +47,6 @@
 <h1>Bem vindo, {nome}<b>_</b>!</h1>
 <input type="text" bind:value={nome} placeholder="Your name here">
      
-<button on:click={toggle}>Click?</button>
-
 {#if listgrid}
      <section style:padding="10px;">
           <GridButton displayGrid={displayGrid}/> 
@@ -65,6 +63,8 @@
      </section>
 {/if}
 
+<button on:click={toggle}>Click?</button>
+
 <style> 
      h1 {
           font-size: 3rem;
@@ -79,13 +79,12 @@
           50% {color: transparent;}
      }
      button {
+          margin: 50px;
           color: orangered;
           border: solid orangered 1px;
           border-radius: 5px;
           font-size: 1.3rem;
           padding: 5px;
-          position: absolute;
-          bottom: 100px;
           background-color: white;
      }
      #show {

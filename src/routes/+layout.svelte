@@ -1,9 +1,3 @@
-<script>
-     import Menu from './components/Menu.svelte'
-</script>
-
-<Menu />
-
 <main>
      <slot />
 </main>
